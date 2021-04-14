@@ -1,5 +1,10 @@
 # Book vs Movie
 
+[![project-languages-used](https://img.shields.io/github/languages/count/theykay/Book-vs-Movie?color=important)](https://github.com/theykay/Book-vs-Movie)
+[![project-top-language](https://img.shields.io/github/languages/top/theykay/Book-vs-Movie?color=blueviolet)](https://github.com/theykay/Book-vs-Movie)
+[![License](https://img.shields.io/github/license/theykay/Book-vs-Movie)](https://github.com/theykay/Book-vs-Movie/blob/main/LICENSE)
+[![github-follow](https://img.shields.io/github/followers/theykay?label=Follow&logoColor=purple&style=social)](https://github.com/theykay)
+
 ## Description
 ### In this project we leveraged the goodreads api, and the omdb api to compare ratings of books and ratings of movies.
 ### We converted the ratings to a scale out of 100.
