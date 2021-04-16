@@ -9,18 +9,7 @@
 /* Width of body */
 body {
     width: 100%;
-   
-}
-
-/* Background image */
-.img-container {
-    background-image: url(../assets/sean-benesh-6Nbo9Pn0yJA-unsplash.jpg);
-    height: 140vh;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
+    background-color: lightcoral;
 }
 
 /* Site title & subtitle */
@@ -218,77 +207,3 @@ input[type="submit"] {
     height: 225px;
     width: 150px;
 }
-
-/* Disabled CSS  */
-
-/* #header {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
-    color: yellow;
-    justify-content:center;
-    align-items: center;
-    
-} */
-
-/* .container {
-    width: auto;
-    max-width: 100%;
-    background-color:cornflowerblue;
-    border-radius: 10px;
-    padding: 0px;
-    box-shadow: 0 0 10px 2px;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-} */
-
-/* .section.section {
-    align-items: center;
-    justify-content: center;
-    display: block;
-} */
-
-/* :root {
-    --primary-color-h: 156;
-    --primary-color-s: 50%;
-    --primary-color-l: 50%;
-    --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
-    --primary-color--light: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + var(--lighten)));
-    --primary-color--dark: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + var(--darken)));
-    --secondary-color: hsl(calc(var(--primary-color-h) + 180), var(--primary-color-s), var( --primary-color-l));
-    --lighten: 15%;
-    --darken: -15%;
-} */
-
-/* #body{
-    --hue: var(--hue-neutral);
-    background-color: hsl(var(--hue), 100%, 25%);
-    padding: 0px 0px 0px 0px; 
-    margin: px;
-} */
-
-/* .btn {
-    display: inline-block;
-    width: 200px;
-    font-weight: bold;
-    padding: 10px;
-    color: #fff;
-    border: 4px solid #fff;
-    text-align: center;
-    outline: none;
-    text-decoration: none;
-    transition: background-color 0.2s ease-out, color 0.2s ease-out;
-} */
-
-/* Disabld button for possible future use */
-/* a {
-    margin-top: 20px;
-    font-size: 1.3em;
-    font-family: "Source Sans Pro", sans-serif;
-} */
-
-/* Disabled button properties */
-/* .btn:hover, .btn:active {
-    background-color: #fff;
-    color: #000;
-    transition: background-color 0.3s ease-in, color 0.3s ease-in;
-} */

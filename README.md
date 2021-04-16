@@ -15,7 +15,7 @@
 
 ## About
 Quick way to compare the audience rating of a movie with that of the book it's based on.\
-![Book vs Movie](./assets/Screenshot.PNG)
+![Book vs Movie](./assets/images/Screenshot.PNG)
 
 ## Technologies
 * jQuery
