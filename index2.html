@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book vs Movie</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body id='body'>
+  <!-- error modal -->
+  <aside id='error-modal' class='modal'>
+    <!-- <aside> -->
+    <div class="modal-background"></div>
+    <section class=modal-card>
+      <header class="modal-card-head">
+        <p class='modal-card-title'>Oops!</p>
+        <button id='close-icon' class='delete' aria-label='close' onclick=closeModal()></button>
+      </header>
+      <article class='modal-card-body'>
+        <p><span id='search-type'></span> not found, please check spelling and try again</p>
+      </article>
+      <footer class='modal-card-foot'>
+        <button id='close-button' class='button modal-button' onclick=closeModal()>close</button>
+      </footer>
+    </section>
+  </aside>
+
+  <header id='page-head'>
+    <section class='inner-container'>
+      <h1>Book vs Movie</h1>
+      <h2>quickly compare ratings!</h2>
+    </section>
+    <section id='search' class='has-text-centered'>
+      <input id='search-input' type='text' class='input-value' placeholder='enter a movie title'>
+      <input id='search-button' type='submit' value='search' class='button'>
+    </section>
+  </header>
+
+  <article id='all-results'>
+    <!-- rating difference container -->
+    <section id='rating-container' class='tile is-ancestor'>
+      <div class='tile is-parent is-10'>
+        <section id='comparison-raing' class='tile is-child notification is-danger is-light headline'>
+          <p id='compare' class='title transbox'><u>comparison rating:</u></p>
+          <p id='rating' class='subtitle is-link transbox headline'></p>
+        </section>
+      </div>
+    </section>
+
+    <section id='columns' class='tile is-ancestor'>
+      <!-- book result -->
+      <div class='tile is-parent is-vertical is-5'>
+        <article id='book-result' class='tile is-child notification is-primary is-bold is-light headline'>
+          <p class='title transbox'><u id='book-title'></u></p>
+          <p class='subtitle transbox'>written by <span id='book-author'></span></p>
+          <p id='book-year' class='subtitle transbox'></p>
+          <p id='book-rating' class='subtitle transbox'></p>
+          <img id='book-cover' class='subtitle transbox' alt='book cover'>
+        </article>
+      </div>
+      <!-- movie result -->
+      <div class='tile is-parent is-vertical is-5'>
+        <article id='movie-result' class='tile is-child notification is-primary is-bold is-light headline'>
+          <p class='title transbox'><u id='movie-title'></u></p>
+          <p id='movie-director' class='subtitle transbox'></p>
+          <p id='movie-year' class='subtitle transbox'></p>
+          <p id='movie-rating' class='subtitle transbox'></p>
+          <img id='movie-poster' class='subtitle transbox' alt='movie poster'>
+        </article>
+      </div>
+    </section>
+  </article>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src='./assets/scripts/bookratings.js'></script>
+  <script src='./assets/scripts/movieratings.js'></script>
+  <script src='./assets/scripts/compare.js'></script>
+</body>
+
+</html>
