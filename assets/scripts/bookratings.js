@@ -1,8 +1,8 @@
 // when populating fields, on the book-rating element, set an attribute of data-rating with a value equal to the 100-point scale rating of the book (it'll be used in the compare.js file to compare the ratings)
 // document.addEventListener("DOMContentLoaded", function () {
-document.getElementById("search-btn").addEventListener("click", getBookTitle);
+document.getElementById("search-button").addEventListener("click", getBookTitle);
 function getBookTitle() {
-    let search = encodeURI(document.getElementById("search-movie-title").value);
+    let search = encodeURI(document.getElementById("search-input").value);
     let apiKey = "eqWNq7n8qMzK8VbeMadoyg";
     let bookURL = "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?key=" + apiKey + "&q=" + search + "&p=1";
     $.ajax({
@@ -10,7 +10,7 @@ function getBookTitle() {
         type: "GET"
     }).then(function (xml) {
         if (xml.getElementsByTagName('total-results')[0].textContent == 0) {
-            document.getElementById('searchType').textContent = 'Book/Movie';
+            document.getElementById('search-type').textContent = 'Book/Movie';
             document.getElementById('error-modal').setAttribute('class', 'modal is-active');
         } else {
             var topResult = xml.getElementsByTagName('work')[0];
