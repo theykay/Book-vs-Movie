@@ -2,108 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book vs Movie</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="./assets/styles/reset.css">
-  <link rel="stylesheet" href="./assets/styles/styles-2.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Chicle&family=Faster+One&family=Fontdiner+Swanky&family=Mystery+Quest&family=Open+Sans&family=Shadows+Into+Light+Two&family=Source+Sans+Pro&family=Zilla+Slab+Highlight&display=swap"
-    rel="stylesheet">
-
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 
-<body id="body" class="img-container">
-  
-  <div id='error-modal' class="modal">
+<body id='body'>
+  <!-- error modal -->
+  <aside id='error-modal' class='modal'>
+    <!-- <aside> -->
     <div class="modal-background"></div>
-    <div class="modal-card">
+    <section class=modal-card>
       <header class="modal-card-head">
-        <p class="modal-card-title">Error</p>
-        <button id='close-icon' class="delete" aria-label="close" onclick='closeModal()'></button>
+        <p class='modal-card-title'>Oops!</p>
+        <button id='close-icon' class='delete' aria-label='close' onclick=closeModal()></button>
       </header>
-      <section class="modal-card-body">
-        <!-- display search term here -->
-        <p><span id='searchType'></span> not found, please check spelling and try again.</p>
-      </section>
-      <footer class="modal-card-foot">
-        <button id='close-btn' class="button modal-button" onclick='closeModal()'>Close</button>
+      <article class='modal-card-body'>
+        <p><span id='search-type'></span> not found, please check spelling and try again</p>
+      </article>
+      <footer class='modal-card-foot'>
+        <button id='close-button' class='button modal-button' onclick=closeModal()>close</button>
       </footer>
-    </div>
-  </div>
+    </section>
+  </aside>
 
-  <header>
-    <!-- Title Header -->
-    <div>
-      <div class="inner-container">
-        <!-- Title & Subtitle -->
-        <h1>Book vs Movie</h1>
-        <h2>compare ratings!</h2>
-
-        <!-- Disable button. Possible future use. -->
-        <!-- <a class="btn" href="#">Search</a> -->
-
-        <!-- Search entry & button -->
-        <section id="search" class="has-text-centered">
-          <!-- Search entry -->
-          <input id="search-movie-title" type="text" class="inputValue" placeholder="Enter a movie to search">
-          <!-- Search button -->
-          <input id="search-btn" type="submit" value="Submit" class="button">
-        </section>
-      </div>
-    </div>
+  <header id='page-head'>
+    <section class='inner-container'>
+      <h1>Book vs Movie</h1>
+      <h2>quickly compare ratings!</h2>
+    </section>
+    <section id='search' class='has-text-centered'>
+      <input id='search-input' type='text' class='input-value' placeholder='enter a movie title'>
+      <input id='search-button' type='submit' value='search' class='button'>
+    </section>
   </header>
 
+  <article id='all-results' class='is-hidden'>
+    <!-- rating difference container -->
+    <section id='rating-container' class='tile is-ancestor'>
+      <div class='tile is-parent is-10'>
+        <section id='comparison-rating' class='tile is-child notification is-danger is-light headline'>
+          <p id='compare' class='title transbox'><u>comparison rating</u></p>
+          <p id='rating' class='subtitle is-link transbox headline'></p>
+        </section>
+      </div>
+    </section>
 
-  <!-- Comparison rating container -->
-  <div id="rating-container" class="tile is-ancestor ">
-    <!-- Comparison Rating -->
-    <div class="tile is-parent is-10">
-      <article id="comparison-rating" class="tile is-child notification is-danger is-light headline">
-        <!-- Comparison rating title -->
-        <p id="compare" class="title transbox "><u>Comparison Rating:</u></p>
-        <!-- Comparison rating subtitle & space to have calculated rating -->
-        <p id="rating" class="subtitle is-link transbox headline">Enter a movie above to begin search</p>
-      </article>
-    </div>
-  </div>
+    <section id='columns' class='tile is-ancestor'>
+      <!-- book result -->
+      <div class='tile is-parent is-vertical is-5'>
+        <article id='book-result' class='tile is-child notification is-primary is-bold is-light headline'>
+          <p class='title transbox'><u id='book-title'></u></p>
+          <p class='subtitle transbox'>written by <span id='book-author'></span></p>
+          <p id='book-year' class='subtitle transbox'></p>
+          <p id='book-rating' class='subtitle transbox'></p>
+          <img id='book-cover' class='subtitle transbox' alt='book cover'>
+        </article>
+      </div>
+      <!-- movie result -->
+      <div class='tile is-parent is-vertical is-5'>
+        <article id='movie-result' class='tile is-child notification is-primary is-bold is-light headline'>
+          <p class='title transbox'><u id='movie-title'></u></p>
+          <p id='movie-director' class='subtitle transbox'></p>
+          <p id='movie-year' class='subtitle transbox'></p>
+          <p id='movie-rating' class='subtitle transbox'></p>
+          <img id='movie-poster' class='subtitle transbox' alt='movie poster'>
+        </article>
+      </div>
+    </section>
+  </article>
 
-  <!-- Book & Movie result containers -->
-  <div id="columns" class="tile is-ancestor">
-
-    <!-- Book Result -->
-    <div class="tile is-parent is-vertical is-5">
-      <article id="book-result" class="tile is-child notification is-primary is-bold is-light headline">
-        <p id="book-title" class="title transbox "><u>Book Result</u></p>
-        <p id="book-author" class="subtitle transbox">Author</p>
-        <p id="book-year" class="subtitle transbox">Published Year</p>
-        <p id="book-rating" class="subtitle transbox">Rating</p>
-        <img id="book-cover" class="subtitle transbox" src="./assets/aaron-burden-MSEC-yHdRsc-unsplash.jpg" alt="book cover">
-      </article>
-    </div>
-
-
-    <!-- Movie Result -->
-    <div class="tile is-parent is-vertical is-5">
-      <article id="movie-result" class="tile is-child notification is-link is-bold is-light headline">
-        <p id="movie-title" class="title transbox "><u>Movie result</u></p>
-        <p id="movie-director" class="subtitle transbox">Director</p>
-        <p id="movie-year" class="subtitle transbox">Release Date</p>
-        <p id="movie-rating" class="subtitle transbox">Rating</p>
-        <img id="movie-poster" class="subtitle transbox" src="./assets/dawid-labno-30YKcpC0yPo-unsplash.jpg" alt="movie cover">
-      </article>
-    </div>
-  </div>
-
-
-  <!-- Add js references-->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./assets/scripts/bookratings.js"></script>
-  <script src="./assets/scripts/movieratings.js"></script>
-  <script src="./assets/scripts/compare.js"></script>
-
+  <!-- <script src='./assets/scripts/bookratings.js'></script> -->
+  <script src='./assets/scripts/movieratings.js'></script>
+  <script src='./assets/scripts/compare.js'></script>
 </body>
 
 </html>
