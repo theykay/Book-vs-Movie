@@ -21,14 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (bRating === mRating) {
                 compareText.append("the same as the book");
             }
+            document.getElementById('all-results').setAttribute('class', '');
         });
     });
-
     observer.observe(movieEl, {
         attributes: true
     });
     observer.observe(bookEl, {
         attributes: true
     });
-
 });

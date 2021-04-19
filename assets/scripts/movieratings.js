@@ -25,6 +25,7 @@ function getMovieTitle() {
             document.getElementById('error-modal').setAttribute('class', 'modal is-active');
         }
     });
+    document.getElementById('search-input').value = '';
 };
 
 function searchIMDB(imdbEndpoint) {
