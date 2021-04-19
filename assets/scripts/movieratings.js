@@ -1,10 +1,10 @@
 // console.log("This script is working")
-document.getElementById("search-btn").addEventListener("click", getMovieTitle);
+document.getElementById("search-button").addEventListener("click", getMovieTitle);
 
 imdbID = ''
 let movieRating = ''
 function getMovieTitle() {
-    let search = encodeURI(document.getElementById("search-movie-title").value);
+    let search = encodeURI(document.getElementById("search-input").value);
     // console.log("This is what was searched " + search)
     let apikey = 'ffe37ecb'
     let endpoint = 'https://www.omdbapi.com/?apikey=' + apikey + '&s=' + search
@@ -21,16 +21,10 @@ function getMovieTitle() {
             let imdbEndpoint = 'https://www.omdbapi.com/?apikey=' + apikey + '&i=' + imdbID;
             searchIMDB(imdbEndpoint)
         } else {
-            document.getElementById('searchType').textContent = 'Movie';
+            document.getElementById('search-type').textContent = 'Movie';
             document.getElementById('error-modal').setAttribute('class', 'modal is-active');
         }
-
     });
-    //let imdbEndpoint = 'http://www.omdbapi.com/?apikey='+apikey'&i='+imdbID;
-    //searchIMDB(imdbEndpoint)
-
-
-
 };
 
 function searchIMDB(imdbEndpoint) {
