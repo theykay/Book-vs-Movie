@@ -28,7 +28,7 @@ Quick way to compare the audience rating of a movie with that of the book it's b
 * Bulma CSS Framework
 
 ## Links
-[Site](https://uofu-project-1.github.io/Book-vs-Movie/)\
+[Site](https://theykay.github.io/book-vs-movie)\
 [Repository](https://github.com/theykay/Book-vs-Movie)
 
 ## Contributors
