@@ -13,6 +13,9 @@
 * [Contact](#contact)
 * [License](#license)
 
+## Note!
+Due to Goodreads discontinuing their API, this app is no longer fully functional
+
 ## About
 Quick way to compare the audience rating of a movie with that of the book it's based on.\
 ![Book vs Movie](./assets/images/live-site-mobile-screenshot.png)
